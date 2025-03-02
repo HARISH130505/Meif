@@ -66,7 +66,7 @@ const works = [
 
 const Page = () => {
     return (
-        <div className="p-4 bg-[#A3D1C6] font-roboto">
+        <div className="p-4 font-roboto">
             <div className='w-full'>
                 <h1 className='py-4 text-3xl font-bold text-center'>Our Past Events</h1>
                 {works.map((work, index) => (
