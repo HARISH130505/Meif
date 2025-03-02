@@ -49,7 +49,7 @@ const works = [
         w2: "/img22.jpg",
     },
     {
-        desc: "Planting saplings.",
+        desc: "Planting saplings at Keelavastha Chavady.",
         date:"Sep 13,2022",
         w1: "/img16.jpg",
         w2: "/img17.jpg",
