@@ -11,16 +11,17 @@ function Navbar(){
     return(
         <div>
             <nav className="bg-[#81ad73] font-roboto px-4 py-2 flex justify-between md:justify-evenly items-center">
+                <Link href="/">
                 <div className="flex justify-center space-x-2 items-center">
                 <Image
                  src="/logo.png"
                  alt="logo"
                  width={60}
                  height={60}
-                 
                 />
                 <h1 className="font-semibold w-[100px] md:w-[300px] md:text-2xl">MotherEarth India Foundation</h1>
                 </div>
+                </Link>
                <ul className="hidden md:flex space-x-8 text-xl px-3">
                     <Link href="/"><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >Home</li></Link>
                     <Link href="/about"><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >About Us</li></Link>

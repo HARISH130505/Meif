@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import bgImage from '../public/bg.png';
 import Navbar from "@/components/Navbar";
@@ -12,6 +12,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ['400', '500', '700'], // Specify the weights you want
   subsets: ["latin"],
 });
 
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`} 
         style={{ backgroundImage: `url(${bgImage.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="relative min-h-screen flex flex-col"> 
             <Navbar />
