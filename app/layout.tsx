@@ -36,7 +36,7 @@ export default function RootLayout({
     <body 
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`} 
         style={{ backgroundImage: `url(${bgImage.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="relative min-h-screen flex flex-col"> 
+        <div className="relative min-h-screen flex flex-col text-black"> 
             <Navbar />
             <div className="bg-[#A3D1C6] opacity-60 absolute inset-0 z-[-1]"></div> 
             <div className="relative flex-grow">{children}</div> 
