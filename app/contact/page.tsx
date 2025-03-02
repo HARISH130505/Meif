@@ -22,13 +22,13 @@ const page = () => {
           <span className='text-[#3D8D7A] font-bold text-xl sm:text-2xl'>EMAIL:</span>
           <br />
           <a
-            href='https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRttWbvGDDKwCZSvddbWLcpHDrfJVpnBKRXQQvwxnlhtZrWsJlZTJKfVTxZSNDtpLHhVHMl'
+            href="mailto:MEIF.MOTHEREARTHINDIA@GMAIL.COM"
           >
             MEIF.MOTHEREARTHINDIA@GMAIL.COM
           </a>
           <br></br>
           <a
-            href='https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRttWbvGDDKwCZSvddbWLcpHDrfJVpnBKRXQQvwxnlhtZrWsJlZTJKfVTxZSNDtpLHhVHMl'
+            href="mailto:KARANPGP@GMAIL.COM"
           >
             KARANPGP@GMAIL.COM
           </a>
