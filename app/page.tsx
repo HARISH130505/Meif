@@ -52,7 +52,7 @@ export default function Home() {
       <div className="px-6 py-5 flex flex-col md:flex-row justify-evenly items-center bg-[#FBFFE4] rounded-b-2xl">
         <div className="text-center mb-6 md:mb-0">
           <div className="font-black text-4xl md:text-5xl text-green-600 px-2">
-            <CountUp end={500} duration={2.5} separator="," />+
+            <CountUp end={5000} duration={2.5} separator="," />+
             <h1 className="text-2xl md:text-3xl text-gray-600">Trees Planted</h1>
           </div>
           <Image
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <div className="text-center mb-6 md:mb-0">
           <div className="font-black text-4xl md:text-5xl">
-            <CountUp end={50} duration={2.5} separator="," />+
+            <CountUp end={10} duration={2.5} separator="," />+
             <h1 className="text-2xl md:text-3xl text-gray-600">Educational Initiatives</h1>
           </div>
           <Image
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="text-center">
           <div className="font-black text-4xl md:text-5xl">
-            <CountUp end={10} duration={2.5} />+
+            <CountUp end={40} duration={2.5} />+
             <h1 className="text-2xl md:text-3xl text-gray-600">Years of Impact</h1>
           </div>
           <Image
