@@ -22,15 +22,17 @@ const page = () => {
           <span className='text-[#3D8D7A] font-bold text-xl sm:text-2xl'>EMAIL:</span>
           <br />
           <a
-            href="mailto:MEIF.MOTHEREARTHINDIA@GMAIL.COM"
+            href="mailto:meif.motherearthindia@gmail.com"
+            className='text-blue-800'
           >
-            MEIF.MOTHEREARTHINDIA@GMAIL.COM
+            meif.motherearthindia@gmail.com
           </a>
           <br></br>
           <a
-            href="mailto:KARANPGP@GMAIL.COM"
+            href="mailto:drpgpirs@gmail.com"
+            className='text-blue-800'
           >
-            KARANPGP@GMAIL.COM
+            drpgpirs@gmail.com
           </a>
         </p>
 
