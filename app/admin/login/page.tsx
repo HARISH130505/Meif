@@ -31,7 +31,7 @@ export default function LoginPage() {
   if (!isSignedIn || !user) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <SignIn routing="hash" />
+        <SignIn routing="hash" redirectUrl="/admin/post" />
       </div>
     );
   }
