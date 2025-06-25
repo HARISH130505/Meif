@@ -11,17 +11,30 @@ export default function LoginPage() {
   useEffect(() => {
     const saveUser = async () => {
       if (isSignedIn && user) {
-        await fetch('/api/store-user', { method: 'POST' });
-        router.push('/admin/post');
+        try {
+          const res = await fetch('/api/store-user', { method: 'POST' });
+
+          if (res.ok) {
+            router.push('/admin/post');
+          } else {
+            console.error('User storage failed:', await res.text());
+          }
+        } catch (error) {
+          console.error('Network or server error:', error);
+        }
       }
     };
 
     saveUser();
   }, [isSignedIn, user, router]);
 
-  return (
-    <div className="flex justify-center items-center min-h-screen">
-      <SignIn routing="hash" />
-    </div>
-  );
+  if (!isSignedIn || !user) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <SignIn routing="hash" />
+      </div>
+    );
+  }
+
+  return null;
 }
