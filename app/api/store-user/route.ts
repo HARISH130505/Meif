@@ -1,34 +1,31 @@
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-import { db } from "@/lib/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { currentUser } from "@clerk/nextjs/server";
+import { db } from "@/lib/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
-export async function POST(req: Request) {
+export async function POST() {
+  const user = await currentUser();
+  if (!user) return new Response("Unauthorized", { status: 401 });
+
+  const email = user.emailAddresses[0]?.emailAddress;
+  const uid = user.id;
+
   try {
-    const user = await currentUser();
-    if (!user) return new Response("Unauthorized", { status: 401 });
+    const userRef = doc(db, "users", uid);
+    const docSnap = await getDoc(userRef);
 
-    const body = await req.json();
-    const { title, description, date, images } = body;
-
-    if (!title || !description || !date || !images?.length) {
-      return new Response("Missing fields", { status: 400 });
+    if (!docSnap.exists()) {
+      await setDoc(userRef, {
+        email,
+        createdAt: new Date().toISOString(),
+      });
     }
 
-    const eventRef = collection(db, "events");
-
-    await addDoc(eventRef, {
-      title,
-      description,
-      date: Timestamp.fromDate(new Date(date)), // ✅ convert to Firestore Timestamp
-      images, // array of image URLs
-      createdAt: Timestamp.now(),
-      createdBy: user.id,
-    });
-
-    return new Response("Event saved", { status: 200 });
-  } catch (err) {
-    console.error("Error saving event:", err);
+    return new Response("User stored", { status: 200 });
+  } catch (error) {
+    console.error("Firestore error:", error);
     return new Response("Server error", { status: 500 });
   }
 }
