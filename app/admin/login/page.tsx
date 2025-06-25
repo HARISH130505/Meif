@@ -18,6 +18,7 @@ export default function LoginPage() {
 
     saveUser();
   }, [isSignedIn, user, router]);
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <SignIn routing="hash" />
