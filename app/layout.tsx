@@ -4,6 +4,7 @@ import "./globals.css";
 import bgImage from '../public/bg.png';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,17 +33,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    <body 
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`} 
-        style={{ backgroundImage: `url(${bgImage.src})`, backgroundSize: 'contain', backgroundPosition: 'center' }}>
-        <div className="relative min-h-screen flex flex-col text-black"> 
-            <Navbar />
-            <div className="bg-[#A3D1C6] opacity-60 absolute inset-0 z-[-1]"></div> 
-            <div className="relative flex-grow">{children}</div> 
-            <Footer/>
-        </div>
-    </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+      <body 
+          className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`} 
+          style={{ backgroundImage: `url(${bgImage.src})`, backgroundSize: 'contain', backgroundPosition: 'center' }}>
+          <div className="relative min-h-screen flex flex-col text-black"> 
+              <Navbar />
+              <div className="bg-[#A3D1C6] opacity-60 absolute inset-0 z-[-1]"></div> 
+              <div className="relative flex-grow">{children}</div> 
+              <Footer/>
+          </div>
+      </body>
+      </html>
+    </ClerkProvider>
   );
 }

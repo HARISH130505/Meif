@@ -35,6 +35,7 @@ function Navbar(){
                     <Link href="/" onClick={handleLinkClick}><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >Home</li></Link>
                     <Link href="/about" onClick={handleLinkClick}><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >About Us</li></Link>
                     <Link href="/events" onClick={handleLinkClick}><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >Events</li></Link>
+                    <Link href="/blogs" onClick={handleLinkClick}><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >Blogs</li></Link>
                     <Link href="/contact" onClick={handleLinkClick}><li className="hover:bg-[#FBFFE4] hover:opacity-75 transition duration-300 ease-in-out p-2 rounded" >Contact</li></Link>
                 </ul>
                 <div className="md:hidden">
@@ -46,6 +47,7 @@ function Navbar(){
                     <Link href="/" onClick={handleLinkClick}><li className="py-4" >Home</li></Link>
                     <Link href="/about" onClick={handleLinkClick}><li className="py-4" >About Us</li></Link>
                     <Link href="/events" onClick={handleLinkClick}><li className="py-4" >Events</li></Link>
+                    <Link href="/blogs" onClick={handleLinkClick}><li className="py-4" >Blogs</li></Link>
                     <Link href="/contact" onClick={handleLinkClick}><li className="py-4" >Contact</li></Link>
                     </ul>
                 )}
