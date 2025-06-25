@@ -13,22 +13,27 @@ export default function BlogList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function fetchBlogs() {
-      try {
-        const res = await fetch('/api/save-blog');
-        if (!res.ok) throw new Error('Failed to load blogs');
-        const data = await res.json();
-        setBlogs(data);
-      } catch (err: any) {
+ useEffect(() => {
+  async function fetchBlogs() {
+    try {
+      const res = await fetch('/api/save-blog');
+      if (!res.ok) throw new Error('Failed to load blogs');
+      const data: Blog[] = await res.json();
+      setBlogs(data);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
         setError(err.message);
-      } finally {
-        setLoading(false);
+      } else {
+        setError('An unknown error occurred');
       }
+    } finally {
+      setLoading(false);
     }
+  }
 
-    fetchBlogs();
-  }, []);
+  fetchBlogs();
+}, []);
+
 
   if (loading) return <p className="text-lg text-gray-600 mt-6">Loading blogs...</p>;
   if (error) return <p className="text-lg text-red-500 mt-6">{error}</p>;
